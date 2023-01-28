@@ -25,3 +25,20 @@ int main()
         cout << num << " is not perfect number.";
     }
 }
+
+/*
+a positive integer that is equal to the sum of its proper diviser
+
+    (i = 1 to i < num)
+
+    num = 28
+    28 % 1 = 0
+    28 % 2 = 0
+    28 % 4 = 0
+    28 % 7 = 0
+    28 % 14 = 0
+
+    1 + 2 + 4 + 7 + 14 = sum = 28
+    num == sum : this is perfect number
+
+*/
