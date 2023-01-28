@@ -1,7 +1,9 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-int main(){
-    cout<<"hi"<<endl;
-    cout<<"hello world";
+int main()
+{
+    cout << "Hello world";
 }
+// hi
+// hello

@@ -16,5 +16,3 @@ int main()
         cout << num << " is a odd number." << endl;
     }
 }
-// hi 
-// hello
