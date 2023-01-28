@@ -1,6 +1,29 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
 
-int main(){
-    
+int main()
+{
+    long num;
+    cout << "Enter any number : ";
+    cin >> num;
+    long temp = num;
+    long sum = 0;
+    int size = trunc(log10(num)) + 1;
+
+    while (num > 0)
+    {
+        int rem = num % 10;
+
+        sum += (rem * rem * rem);
+        num = num / 10;
+    }
+    if (temp == sum)
+    {
+        cout << "Number is Armstrong";
+    }
+    else
+    {
+        cout << "Number is Not armstrong";
+    }
 }
