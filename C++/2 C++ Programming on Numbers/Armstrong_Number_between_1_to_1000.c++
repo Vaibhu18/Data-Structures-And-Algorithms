@@ -2,11 +2,7 @@
 #include <cmath>
 using namespace std;
 
-int main()
-{
-    long num;
-    cout << "Enter any number : ";
-    cin >> num;
+int check_Armstrong_Number(int num){
     long temp = num;
     long sum = 0;
     int size = trunc(log10(temp)) + 1;
@@ -22,12 +18,19 @@ int main()
         sum += abc;
         num = num / 10;
     }
-    if (temp == sum)
+    return sum;
+}
+
+int main()
+{
+    for(int i = 1; i <= 1000; i++){
+        
+        int num = check_Armstrong_Number(i);
+        if (i == num)
     {
-        cout << "Number is Armstrong";
+        cout << i <<" ";
     }
-    else
-    {
-        cout << "Number is Not armstrong";
+
     }
+    
 }
