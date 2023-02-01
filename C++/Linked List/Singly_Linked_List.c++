@@ -137,6 +137,18 @@ void deleteByPosition(Node *&head, int pos)
     }
 }
 
+// get length of LL
+int getLength(Node* head){
+    Node* temp = head;
+    int count = 0;
+    while(temp != NULL){
+        count++;
+        temp = temp->next;
+    }
+    return count;
+}
+
+
 
 // Print Linked List
 void print(Node *head)
@@ -167,6 +179,7 @@ int main()
     insertAtMiddle(tail, head, 7, 100);
     
 
-    cout << endl;
     print(head);
+    cout << endl;
+    cout<<"Length of LL is : "<<getLength(head);
 }
