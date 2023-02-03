@@ -1,3 +1,5 @@
+// https://www.codingninjas.com/codestudio/problems/interview-shuriken-42-detect-and-remove-loop_241049?leftPanelTab=1
+
 #include <iostream>
 #include <map>
 using namespace std;
@@ -152,3 +154,10 @@ int main()
     removeLoop(head);
     print(head);
 }
+
+/*
+T.C = O(n)
+S.C = O(n)
+if map space complexity is O(n) we want to decrease it thats why i use floyd detection algo
+S.C = O(1)
+*/
