@@ -4,6 +4,7 @@
 #include <stack>
 using namespace std;
 
+    // Update Stack 
 void solve(stack<int> &s, int x)
 {
     if (s.empty())
@@ -20,6 +21,7 @@ void solve(stack<int> &s, int x)
 
 int main()
 {
+    // Stack Creation 
     stack<int> s;
     for (int i = 4; i <= 10; i += 2)
     {
@@ -29,6 +31,7 @@ int main()
     int ele = 2;
     solve(s, ele);
 
+    // Print Stack
     while (!s.empty())
     {
         cout << s.top() << " ";
