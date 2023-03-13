@@ -1,3 +1,5 @@
+// https://www.codingninjas.com/codestudio/problems/binary-search_972?leftPanelTab=1
+
 #include <iostream>
 using namespace std;
 
