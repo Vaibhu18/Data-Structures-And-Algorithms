@@ -69,24 +69,25 @@ pair<int, int> diameter(node* root){
     ans.second = max(left.second, right.second) + 1;
     return ans;
 }
-
-int check(node* root){
-    if(root == NULL){
-        return 0;
-    }
-cout<<"hello"<<" ";
-    // int left = check(root->left);
-    int right = check(root->right);
-    right++;
-    return right;
+int ans = 0;
+int height(node* root){
+   if(root == NULL){
+       return 0;
+   }
+   int lh = height(root->left);
+   int rh = height(root->right);
+   ans = max(ans, lh+rh+1);
+   return 1+max(lh, rh);
 }
 
 int main(){
     node* root = NULL;
     levelOrderTree(root);
     // levelOrderTraversal(root);
-    cout<<"Diameter of tree is "<< diameter(root).first<<endl;
-    cout<<"count is : "<<check(root);
+    cout<<"1st Approach Diameter of tree is "<< diameter(root).first<<endl;
+    height(root);
+    cout<<"2nd Approach Diameter of tree is "<< ans<< endl;;
+    
 
     // 1 2 3 -1 -1 -1 4 -1 -1
 }
