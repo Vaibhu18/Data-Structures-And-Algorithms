@@ -15,33 +15,18 @@ class node{
     }
 };
 
-void levelOrderTraversal(node* root){
-    if(root == NULL){
-        return;
-    }
-    queue<node*> q;
-    q.push(root);
-    q.push(NULL);
+bool searchInBST(node* root, int data){
+    if(root == NULL)
+        return false;
 
-    while(!q.empty()){
-        node* temp = q.front();
-        q.pop();
+    if(root->data == data){
+        return true;
+    }    
 
-        if(temp == NULL){
-            cout<<endl;
-            if(!q.empty()){
-                q.push(NULL);
-            }
-        }else{
-            cout<<temp->data<<" ";
-            if(temp->left){
-                q.push(temp->left);
-            }
-
-            if(temp->right){
-                q.push(temp->right);
-            }
-        }
+    if(data > root->data){
+        searchInBST(root->right, data);
+    }else{
+        searchInBST(root->left, data);
     }
 }
 
@@ -73,5 +58,7 @@ int main(){
 
     cout<<"Enter data to create BST : "<<endl;
     takeInput(root);
-    levelOrderTraversal(root);
+    int data = 6;
+    bool ans = searchInBST(root, data);
+    cout<<ans;
 }

@@ -15,33 +15,18 @@ class node{
     }
 };
 
-void levelOrderTraversal(node* root){
-    if(root == NULL){
-        return;
-    }
-    queue<node*> q;
-    q.push(root);
-    q.push(NULL);
+bool searchInBST(node* root, int data){
+    if(root == NULL)
+        return false;
 
-    while(!q.empty()){
-        node* temp = q.front();
-        q.pop();
+    if(root->data == data){
+        return true;
+    }    
 
-        if(temp == NULL){
-            cout<<endl;
-            if(!q.empty()){
-                q.push(NULL);
-            }
-        }else{
-            cout<<temp->data<<" ";
-            if(temp->left){
-                q.push(temp->left);
-            }
-
-            if(temp->right){
-                q.push(temp->right);
-            }
-        }
+    if(data > root->data){
+        searchInBST(root->right, data);
+    }else{
+        searchInBST(root->left, data);
     }
 }
 
@@ -68,10 +53,29 @@ void takeInput(node* &root){
     }
 }
 
+node* minVal(node* root){
+    node* temp = root;
+    while(temp->left != NULL){
+        temp = temp->left;
+    }
+    return temp;
+}
+
+node* maxVal(node* root){
+    node* temp = root;
+    while(temp->right != NULL){
+        temp = temp->right;
+    }
+    return temp;
+}
+
+
 int main(){
     node* root = NULL;
 
     cout<<"Enter data to create BST : "<<endl;
     takeInput(root);
-    levelOrderTraversal(root);
+    // node* ans = ;
+    cout<<"Min value of BST : "<< minVal(root)->data<<endl;
+    cout<<"Max value of BST : "<< maxVal(root)->data;
 }
