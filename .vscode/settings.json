@@ -1,6 +1,7 @@
 {
-    "files.associations": {
-        "_01.C": "cpp",
-        "_02.C": "cpp"
-    }
+  "files.associations": {
+    "_01.C": "cpp",
+    "_02.C": "cpp",
+    "stdio.h": "c"
+  }
 }
