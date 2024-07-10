@@ -11,6 +11,11 @@ struct Node *Head = NULL;
 void createSLL();
 void printSLL();
 void insertAtPosition(int, int);
+void insertFirst(int);
+void insertLast(int);
+void deleteAtPosition(int);
+void deleteFirst();
+void deleteLast();
 int lengthSLL();
 
 void main()
@@ -19,7 +24,12 @@ void main()
     printSLL();
 
     // insert at position
-    insertAtPosition(8, 20);
+    // insertAtPosition(8, 20);
+    // deleteAtPosition(6);
+    // insertFirst(20);
+    // insertLast(20);
+    // deleteFirst();
+    deleteLast();
     printSLL();
     printf("\nSLL length : %d", lengthSLL());
 }
@@ -79,6 +89,67 @@ void insertAtPosition(int position, int data)
         newNode->next = currentNode->next;
         currentNode->next = newNode;
     }
+}
+
+void insertFirst(int data)
+{
+    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
+    newNode->data = data;
+    newNode->next = NULL;
+    newNode->next = Head;
+    Head = newNode;
+}
+
+void insertLast(int data)
+{
+    struct Node *currentNode = Head;
+    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
+    newNode->data = data;
+    newNode->next = NULL;
+
+    while (currentNode->next != NULL)
+    {
+        currentNode = currentNode->next;
+    }
+    currentNode->next = newNode;
+}
+
+void deleteFirst()
+{
+    Head = Head->next;
+}
+void deleteLast()
+{
+    struct Node *currentNode = Head;
+    while (currentNode->next->next != NULL)
+    {
+        currentNode = currentNode->next;
+    }
+    currentNode->next = NULL;
+}
+
+void deleteAtPosition(int position)
+{
+    struct Node *currentNode = Head;
+    if (position == 1)
+    {
+        currentNode = currentNode->next;
+        Head = currentNode;
+        return;
+    }
+    if (position > lengthSLL() || position < 1)
+    {
+        printf("\nError : Invalid position");
+        return;
+    }
+    struct Node *temp = NULL;
+    int len = 1;
+    while (len < position - 1)
+    {
+        len++;
+        currentNode = currentNode->next;
+    }
+    currentNode->next = currentNode->next->next;
 }
 
 void printSLL()
