@@ -22,15 +22,14 @@ void main()
 {
     createSLL();
     printSLL();
-
     // insert at position
     // insertAtPosition(8, 20);
     // deleteAtPosition(6);
     // insertFirst(20);
     // insertLast(20);
     // deleteFirst();
-    deleteLast();
-    printSLL();
+    // deleteLast();
+    // printSLL();
     printf("\nSLL length : %d", lengthSLL());
 }
 

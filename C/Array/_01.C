@@ -21,7 +21,7 @@ int main()
             scanf("%d", &arr[i][j]);
         }
     }
-   for (int i = 0; i < col; i++)
+    for (int i = 0; i < col; i++)
     {
         for (int j = 0; j < row; j++)
         {
