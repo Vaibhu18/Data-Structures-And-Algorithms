@@ -9,7 +9,7 @@ int main()
     int len = sizeof(arr) / sizeof(arr[0]);
 
     selectionSort(arr, len);
-    // printArray(arr, len);
+    printArray(arr, len);
     return 0;
 }
 
@@ -17,18 +17,18 @@ void selectionSort(int arr[], int len)
 {
     for (int i = 0; i < len; i++)
     {
-        int temp = arr[i];
-        int minIndex = 0;
-        for (int j = i+1; j < len; j++)
+        int minIndex = i;
+        for (int j = i; j < len; j++)
         {
-            if (arr[j] < arr[i])
+            if (arr[j] < arr[minIndex])
             {
-                printf("%d\n", arr[j]);
+                minIndex = j;
             }
         }
-        
-        // arr[i] = arr[minIndex];
-        // arr[minIndex] = temp;
+
+        int temp = arr[i];
+        arr[i] = arr[minIndex];
+        arr[minIndex] = temp;
     }
 }
 
