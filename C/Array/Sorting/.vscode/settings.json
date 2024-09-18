@@ -1,6 +1,8 @@
 {
   "files.associations": {
     "03_Selection_Sort.C": "cpp",
-    "01_Insertion-Sort.C": "cpp"
+    "01_Insertion-Sort.C": "cpp",
+    "04_Quick_Sort.C": "cpp",
+    "02_Bubble_Sort.C": "cpp"
   }
 }

@@ -1,0 +1,6 @@
+1) selection sort => 
+    i) pick an element and find minimum element from remaining array and replace it with picked
+        element
+    
+2) insertion sort => pick an element and take next element and check it is bigger or smaller 
+if it is smaller then place at left side if it is bigger then place at right side
